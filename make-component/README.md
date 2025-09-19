@@ -5,7 +5,7 @@ A powerful TypeScript-based CLI tool for generating React components with Emmet 
 ## Features
 
 - **Single & Batch Generation** - Create one component or many from YAML config
-- **Multiple Style Systems** - CSS, SCSS, Tailwind, Styled Components, or none
+- **Multiple Style Systems** - CSS, SCSS, Tailwind, or none (Styled Components planned)
 - **Emmet Support** - Use Emmet abbreviations for rapid JSX structure creation
 - **TypeScript & JavaScript** - Auto-detect or force specific file types
 - **Props Management** - Define typed props with optional/required flags
@@ -97,7 +97,7 @@ make-component <ComponentName> [options]
 |--------|-------------|---------|
 | `-p, --props <props>` | Component props definition | `"title:string,count:number"` |
 | `-d, --dir <directory>` | Output directory | `src/components/ui` |
-| `-s, --style <type>` | Style type: css\|scss\|tailwind\|styled\|none | `scss` |
+| `-s, --style <type>` | Style type: css\|scss\|tailwind\|none (styled planned) | `scss` |
 | `-e, --emmet <string>` | Emmet abbreviation for JSX structure | `"div.card>h2+p"` |
 | `--test` | Preview mode (no files created) | |
 | `--jsx` | Force JavaScript .jsx files | |
@@ -184,7 +184,7 @@ components:
     type: tsx  # tsx, jsx, auto
     output:
       directory: src/components/ui
-      style: css  # css, scss, tailwind, styled, none
+      style: css  # css, scss, tailwind, none
     props:
       - name: children
         type: React.ReactNode
@@ -216,26 +216,13 @@ components:
         required: true
     structure:
       emmet: "div.modal-overlay>div.modal>div.modal-header>h2.modal-title+button.close^div.modal-body"
-    hooks: [useEffect, useState]
-    custom:
-      effects:
-        - trigger: isOpen
-          action: "document.body.style.overflow = isOpen ? 'hidden' : 'auto'"
 
-# Global configuration
+# Global configuration (only defaults are currently supported)
 config:
   defaults:
     type: auto
     style: css
     directory: src/components
-  stylePresets:
-    theme:
-      primary: "#3b82f6"
-      secondary: "#64748b"
-  templates:
-    page:
-      structure: "div.page>header+main+footer"
-      style: scss
 ```
 
 ## Styling Options
@@ -261,15 +248,6 @@ Uses Tailwind classes inline, no separate style file:
 <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
   <span className="btn-text">{children}</span>
 </button>
-```
-
-### Styled Components
-Generates styled-components (future feature):
-
-```jsx
-const StyledButton = styled.button`
-  /* Component styles */
-`;
 ```
 
 ### None
@@ -620,7 +598,10 @@ MIT License - see LICENSE file for details.
 
 ## Roadmap
 
-- [ ] Styled Components support
+- [ ] Styled Components support (styled-components integration)
+- [ ] YAML hooks implementation (useEffect, useState, etc.)
+- [ ] YAML custom effects implementation
+- [ ] YAML config extensions (stylePresets, templates, naming)
 - [ ] Custom hook generation
 - [ ] Component story generation (Storybook)
 - [ ] Theme integration

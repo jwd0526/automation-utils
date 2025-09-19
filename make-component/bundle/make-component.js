@@ -1208,31 +1208,6 @@ class YamlTemplateGenerator {
                     type: 'auto',
                     style: 'css',
                     directory: 'src/components'
-                },
-                stylePresets: {
-                    theme: {
-                        primary: '#3b82f6',
-                        secondary: '#64748b',
-                        danger: '#ef4444',
-                        success: '#10b981'
-                    }
-                },
-                templates: {
-                    page: {
-                        structure: 'div.page>header.page-header+main.page-content+footer.page-footer',
-                        style: 'scss'
-                    },
-                    form: {
-                        structure: 'form.form>div.form-header+div.form-body+div.form-footer',
-                        hooks: ['useState', 'useCallback']
-                    }
-                },
-                naming: {
-                    component: 'PascalCase',
-                    style: 'kebab-case'
-                },
-                output: {
-                    structure: 'flat'
                 }
             }
         };
@@ -1257,17 +1232,14 @@ class YamlTemplateGenerator {
 # https://github.com/your-repo/react-component-generator
 
 `;
+        // Add comments without breaking YAML structure
         const componentComments = yamlContent
-            .replace('components:', 'components:\n  # Example components with different configurations')
-            .replace('- name: Button', '\n  # Basic UI Button Component\n  - name: Button')
-            .replace('- name: Modal', '\n  # Modal Dialog with hooks and effects\n  - name: Modal')
-            .replace('- name: Card', '\n  # Tailwind Card Component (JavaScript)\n  - name: Card')
-            .replace('config:', '\n# Global configuration settings\nconfig:')
-            .replace('defaults:', '  # Default settings for all components\n  defaults:')
-            .replace('stylePresets:', '  # Style presets and theme colors\n  stylePresets:')
-            .replace('templates:', '  # Reusable component templates\n  templates:')
-            .replace('naming:', '  # File naming conventions\n  naming:')
-            .replace('output:', '  # Output structure options\n  output:');
+            .replace('components:', '# Example components with different configurations\ncomponents:')
+            .replace('  - name: Button', '  # Basic UI Button Component\n  - name: Button')
+            .replace('  - name: Modal', '  # Modal Dialog with hooks and effects\n  - name: Modal')
+            .replace('  - name: Card', '  # Tailwind Card Component (JavaScript)\n  - name: Card')
+            .replace('\nconfig:', '\n# Global configuration settings (only defaults are currently supported)\nconfig:')
+            .replace('  defaults:', '  # Default settings for all components\n  defaults:');
         return header + componentComments;
     }
     static generateMinimalTemplate() {
