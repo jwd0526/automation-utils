@@ -34,7 +34,7 @@ make-component Button
 
 ```bash
 # Download the single file
-curl -o make-component https://raw.githubusercontent.com/jwd0526/automation-utils/react-component-generator/main/bundle/index.js
+curl -o make-component https://raw.githubusercontent.com/jwd0526/automation-utils/main/make-component/bundle/make-component.js
 chmod +x make-component
 
 # Use immediately
