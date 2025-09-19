@@ -1,6 +1,6 @@
 import * as path from 'path';
 import { ReactComponentGenerator } from '../src/generator';
-import { CliArgs } from '../src/types';
+import { CliArgs, StyleType } from '../src/types';
 import { TestRunner, TestAssertions, TestHelpers, TEST_TMP_DIR } from './utils/testHelpers';
 
 const runner = new TestRunner();
@@ -19,7 +19,7 @@ function createArgs(overrides: Partial<CliArgs> = {}): CliArgs {
     componentName: 'TestComponent',
     props: '',
     dir: TEST_TMP_DIR,
-    style: 'css',
+    style: 'css' as StyleType,
     emmet: '',
     test: false,
     jsx: false,
