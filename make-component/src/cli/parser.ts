@@ -106,6 +106,7 @@ EXAMPLES:
     make-component Button -p "text:string,onClick:()=>void"
     make-component Card -p "title:string,children" -s tailwind
     make-component Modal -d src/components -e "div.modal>div.content>h2+p"
+    make-component Badge --test -p "variant:string,children"
 
     # YAML-based generation
     make-component --template                              # Create template

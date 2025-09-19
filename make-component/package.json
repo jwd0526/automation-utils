@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc && npm run bundle",
-    "bundle": "ncc build dist/index.js -o bundle && mv bundle/index.js bundle/make-component.js",
+    "bundle": "ncc build dist/src/index.js -o bundle && mv bundle/index.js bundle/make-component.js",
     "dev": "tsx src/index.ts",
     "clean": "rm -rf dist bundle test/tmp",
     "test": "tsx test/index.ts",
