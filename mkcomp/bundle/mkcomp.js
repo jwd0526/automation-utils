@@ -1229,7 +1229,7 @@ class YamlTemplateGenerator {
 #   mkcomp --from-yaml components.yaml --test
 #
 # For more examples and documentation, visit:
-# https://github.com/your-repo/react-component-generator
+# https://github.com/your-repo/mkcomp
 
 `;
         // Add comments without breaking YAML structure

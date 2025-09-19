@@ -22,10 +22,10 @@ A powerful TypeScript-based CLI tool for generating React components with Emmet 
 
 ```bash
 # If you have the project locally, use the bundled version directly
-node /path/to/react-component-generator/bundle/index.js Button
+node /path/to/mkcomp/bundle/index.js Button
 
 # Or copy to your PATH for global access
-cp /path/to/react-component-generator/bundle/index.js /usr/local/bin/mkcomp
+cp /path/to/mkcomp/bundle/index.js /usr/local/bin/mkcomp
 chmod +x /usr/local/bin/mkcomp
 mkcomp Button
 ```
@@ -50,7 +50,7 @@ mkcomp Button
 ```bash
 # Clone and setup
 git clone <repository-url>
-cd react-component-generator
+cd mkcomp
 npm install
 
 # Build the project
