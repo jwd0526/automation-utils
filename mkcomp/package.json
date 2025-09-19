@@ -1,0 +1,41 @@
+{
+  "name": "mkcomp",
+  "version": "1.0.0",
+  "description": "TypeScript-based React component generator with Emmet support",
+  "main": "dist/index.js",
+  "bin": {
+    "mkcomp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && npm run bundle",
+    "bundle": "ncc build dist/src/index.js -o bundle && mv bundle/index.js bundle/mkcomp.js",
+    "dev": "tsx src/index.ts",
+    "clean": "rm -rf dist bundle test/tmp",
+    "test": "tsx test/index.ts",
+    "test:unit": "tsx test/index.ts",
+    "test:persist": "tsx test/persistent-index.ts",
+    "test:build": "npm run build && node bundle/mkcomp.js --test Button",
+    "test:all": "npm run test && npm run test:build"
+  },
+  "dependencies": {
+    "emmet": "^2.4.7",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.8",
+    "@types/node": "^20.19.17",
+    "@vercel/ncc": "^0.38.1",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "generator",
+    "emmet",
+    "cli",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT"
+}
