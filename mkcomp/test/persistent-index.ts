@@ -22,7 +22,7 @@ TestHelpers.cleanupTestDir = () => {
 };
 
 async function runPersistentTests(): Promise<void> {
-  console.log('🚀 Starting React Component Generator Test Suite (Persistent Mode)');
+  console.log('🚀 Starting mkcomp Test Suite (Persistent Mode)');
   console.log('Files will be preserved in test/tmp for inspection');
   console.log('================================================================\n');
 
@@ -94,7 +94,7 @@ async function runPersistentTests(): Promise<void> {
     process.exit(1);
   } else {
     console.log('\n🎉 All tests passed!');
-    console.log('✅ React Component Generator is working correctly');
+    console.log('✅ mkcomp is working correctly');
     console.log('🔍 Generated files preserved for inspection');
     process.exit(0);
   }

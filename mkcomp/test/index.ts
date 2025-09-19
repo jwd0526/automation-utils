@@ -12,7 +12,7 @@ import integrationTests from './integration.test';
 import yamlTests from './yaml.test';
 
 async function runAllTests(): Promise<void> {
-  console.log('🚀 Starting React Component Generator Test Suite');
+  console.log('🚀 Starting mkcomp Test Suite');
   console.log('================================================\n');
 
   // Ensure clean start
@@ -85,7 +85,7 @@ async function runAllTests(): Promise<void> {
     process.exit(1);
   } else {
     console.log('\n🎉 All tests passed!');
-    console.log('\n✅ React Component Generator is working correctly');
+    console.log('\n✅ mkcomp is working correctly');
     process.exit(0);
   }
 }

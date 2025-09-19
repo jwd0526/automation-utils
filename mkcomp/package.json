@@ -1,7 +1,7 @@
 {
   "name": "mkcomp",
   "version": "1.0.0",
-  "description": "TypeScript-based React component generator with Emmet support",
+  "description": "TypeScript-based mkcomp with Emmet support",
   "main": "dist/index.js",
   "bin": {
     "mkcomp": "./dist/index.js"

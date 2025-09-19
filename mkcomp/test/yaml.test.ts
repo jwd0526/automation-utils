@@ -23,7 +23,7 @@ runner.test('YamlTemplateGenerator - Generate template', () => {
   TestAssertions.assertContains(template, 'name: Card');
   TestAssertions.assertContains(template, 'config:');
   TestAssertions.assertContains(template, 'defaults:');
-  TestAssertions.assertContains(template, '# React Component Generator YAML Template');
+  TestAssertions.assertContains(template, '# mkcomp YAML Template');
 });
 
 runner.test('YamlTemplateGenerator - Generate minimal template', () => {

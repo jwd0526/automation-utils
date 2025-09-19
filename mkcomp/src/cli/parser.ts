@@ -77,7 +77,7 @@ export class CliParser {
 
   static showHelp(): void {
     console.log(`
-React Component Generator
+mkcomp
 
 USAGE:
     mkcomp <componentName> [options]

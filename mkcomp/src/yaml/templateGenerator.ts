@@ -143,7 +143,7 @@ export class YamlTemplateGenerator {
   }
 
   private static addComments(yamlContent: string): string {
-    const header = `# React Component Generator YAML Template
+    const header = `# mkcomp YAML Template
 # This file defines multiple components that can be batch-generated
 #
 # Usage:
